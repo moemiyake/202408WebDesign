@@ -1,0 +1,84 @@
+@use './variables' as *;
+@use './mixin' as *;
+
+// カード
+.e_card {
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 3px;
+
+    @include desktop {
+        border-radius: 6px;
+    }
+
+    // リンク
+    &__link {
+        display: block;
+        text-decoration: none;
+        @include ov_zoomimg;
+
+        &hover {
+            // タイトルの文字色の変更
+            .e_card__title {
+                color: $color_secondary;
+            }
+        }
+    }
+
+    // サムネイル
+    &__thumb {
+        height: 33.3vw;
+        overflow: hidden;
+        display: block;
+
+        @include desktop {
+            height: 180px;
+        }
+
+        img {
+            width: auto;
+            height: 100%;
+            object-fit: cover;
+
+            @include desktop {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    // ボディ
+    &__body {
+        display: flex;
+        flex-direction: column;
+        min-height: 80px;
+        justify-content: space-between;
+        padding: 6px 10px 14px;
+
+        @include desktop {
+            padding: 10px 16px 14px;
+        }
+    }
+
+    // タイトル
+    &__title {
+        @include fz(12);
+        transition: color .2s;
+
+        @include desktop {
+            @include fz(16);
+        }
+    }
+
+    // 価格
+    &__price {
+        line-height: 1;
+        color: $color_secondary;
+        text-align: end; // rightの代わり
+        @include fz(14);
+
+        @include desktop {
+            @include fz(16);
+        }
+    }
+}

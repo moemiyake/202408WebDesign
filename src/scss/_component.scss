@@ -1,0 +1,156 @@
+@use './variables' as *;
+@use './mixin' as *;
+
+//キービジュアル
+.c_kv {
+    background-color: #ded6c5;
+    aspect-ratio: 3 / 4;
+
+    @include desktop {
+        aspect-ratio: initial;
+        height:  360px;
+    }
+
+    &__inner {
+        width: 100%;
+
+        @include desktop {
+            min-width: 1024px;
+            height: 360px;
+            margin: 0 auto;
+        }
+    }
+
+    //スライダーの設定　ここから
+
+
+    //スライダーの設定　ここまで
+}
+
+//セクション
+.c_section {
+    &__header {
+        padding-top: 20px;
+        padding-bottom: 28px;
+        position: relative;
+
+        @include desktop {
+            padding-bottom: 38px;
+            margin-bottom: 50px;
+        }
+
+        &::before {
+            @include desktop {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                width: 60px;
+                height: 2px;
+                background-color: $color_secondary;
+                translate: -50% 0;
+            }
+        }
+
+        //,c_section__headerTitle
+        &Title {
+            text-transform: uppercase;
+            @include fz(16);
+            @include font-webfont_Lato;
+            text-align: center;
+
+            @include desktop {
+                @include fz(30);
+            }
+        }
+    }
+}
+
+// カードコンテナ
+.c_cards {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include touch {
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+
+    @include desktop {
+        min-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__item {
+        width: 32%;
+        margin-left: 2%;
+        margin-top: 2%;
+
+        @include desktop {
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+
+        // 1~3個目のカード
+        &:nth-child(-n + 3){
+            margin-top: 0;
+        }
+
+        &:nth-child(3n + 1){
+            margin-left: 0;
+        }
+    }
+}
+
+// 商品詳細
+.c_detail {
+    @include touch {
+        background-color: #fff;
+    }
+
+    &__innner {
+        display: flex;
+        max-width: 1200px;
+        margin: 0 auto;
+        flex-direction: column;
+
+        @include desktop {
+            flex-direction: row;
+            padding-bottom: 80px;
+        }
+    }
+
+    // メイン
+    &__main {
+        @include desktop {
+            max-width: 600px;
+            margin-top: -20px;
+        }
+    }
+
+    // スライダー
+
+    // サムネイル
+    &__thumbs {
+        display: none;
+
+        @include desktop {
+            display: block;
+        }
+    }
+
+    // コンテンツ
+    &__contents {
+        display: flex;
+        align-items: center;
+        padding-bottom: 20px;
+        margin: 0 20px;
+
+        @include desktop {
+            padding-bottom: 70px;
+            padding-left: 5%;
+            margin: 0 30px;
+        }
+    }
+}
