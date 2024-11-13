@@ -103,13 +103,14 @@
     }
 }
 
+//★繋がってない？
 // 商品詳細
 .c_detail {
     @include touch {
         background-color: #fff;
     }
 
-    &__innner {
+    &__inner {
         display: flex;
         max-width: 1200px;
         margin: 0 auto;
@@ -130,6 +131,7 @@
     }
 
     // スライダー
+
 
     // サムネイル
     &__thumbs {
@@ -152,5 +154,167 @@
             padding-left: 5%;
             margin: 0 30px;
         }
+    }
+
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+
+        @include mobile {
+            width: 100%;
+        }
+
+        @include desktop {
+            margin-top: 30px;
+        }
+    }
+
+    // タイトル
+    &__title {
+        font-weight: bold;
+        margin-top: 30px;
+        @include fz(20);
+        line-height: 1.3;
+
+        @include desktop {
+            @include fz(36);
+            order: 2;
+            margin-top: 10px;
+        }
+    }
+
+    // サブテキスト
+    &__sub {
+        @include fz(14);
+        margin-top: 10px;
+        color: $color_secondary;
+
+        @include desktop {
+            @include fz(18);
+            order: 1;
+        }
+    }
+
+    // 価格
+    &__price {
+        margin-top: 30px;
+        font-weight: bold;
+        @include fz(20);
+        text-align: end;
+
+        @include desktop {
+            @include fz(32);
+            margin-top: 50px;
+            order: 3;
+        }
+    }
+
+    // リード
+    &__lead {
+        @include fz(16);
+        line-height: 1.75;
+        margin-top: 20px;
+
+        @include mobile {
+            @include fz(12);
+        }
+
+        @include desktop {
+            margin: 60px 0 30px;
+            order: 5;
+        }
+    }
+
+    // ボタン
+    &__btn {
+        margin-top: 224px;
+        max-width: 314px;
+
+        @include desktop {
+            order: 4;
+        }
+
+        // TODO: ボタンエレメントの設定
+    }
+}
+
+// 商品のポイント
+.c_point {
+    @include desktop {
+        background-color: #fff;
+    }
+
+    &__inner {
+        @include desktop {
+            min-width: 1000px;
+            padding-top: 45px;
+            padding-bottom: 50px;
+            margin: 0 auto;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        padding: 30px 25px;
+        background-color: $color_bg;
+
+        @include desktop {
+            flex-direction: row;
+            padding: 36px 25px;
+            margin-top: 40px;
+        }
+    }
+
+    &__item {
+        padding: 20px;
+
+        @include touch {
+            background-color: #fff;
+        }
+
+        @include desktop {
+            // width: calc(100% / 3);
+            flex: 1; //flex-grow: 1,flex-shrink,flex-basis
+            padding: 0 20px 58px;
+        }
+
+        & + & {
+            border-top: 2px solid $color_border;
+
+            @include desktop {
+                border-top: none;
+                border-left: 2px solid $color_primary;
+            }
+        }
+
+        &Title {
+            @include fz(16);
+            font-weight: bold;
+            line-height: 1.65;
+
+            @include desktop {
+                @include fz(24);
+                line-height: 1.5;
+            }
+        }
+
+        &Text {
+            margin-top: 10px;
+            @include fz(16);
+            line-height: 1.5;
+            
+            @include mobile {
+                @include fz(12);
+            }
+        }
+    }
+}
+
+//おすすめ
+.c_recommend {
+    @include desktop {
+        padding-top: 80px;
     }
 }
