@@ -692,13 +692,221 @@ body.is-openMenu .l_gnav {
   }
 }
 .c_detail__btn {
-  margin-top: 224px;
+  margin-top: 24px;
   max-width: 314px;
 }
 @media (min-width: 1000px) {
   .c_detail__btn {
     order: 4;
   }
+}
+
+@media (min-width: 1000px) {
+  .c_point {
+    background-color: #fff;
+  }
+}
+@media (min-width: 1000px) {
+  .c_point__inner {
+    max-width: 1000px;
+    padding-top: 45px;
+    padding-bottom: 50px;
+    margin: 0 auto;
+  }
+}
+.c_point__list {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 25px;
+  background-color: #ebe9e4;
+}
+@media (min-width: 1000px) {
+  .c_point__list {
+    flex-direction: row;
+    padding: 36px 25px;
+    margin-top: 40px;
+  }
+}
+.c_point__item {
+  padding: 20px;
+}
+@media (max-width: 999px) {
+  .c_point__item {
+    background-color: #fff;
+  }
+}
+@media (min-width: 1000px) {
+  .c_point__item {
+    flex: 1;
+    padding: 0 20px 58px;
+  }
+}
+.c_point__item + .c_point__item {
+  border-top: 2px solid #ebe9e4;
+}
+@media (min-width: 1000px) {
+  .c_point__item + .c_point__item {
+    border-top: none;
+    border-left: 2px solid #3e2b00;
+  }
+}
+.c_point__itemTitle {
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.65;
+}
+@media (min-width: 1000px) {
+  .c_point__itemTitle {
+    font-size: 24px;
+    font-size: 1.5rem;
+    line-height: 1.5;
+  }
+}
+.c_point__itemText {
+  margin-top: 10px;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+@media (max-width: 719px) {
+  .c_point__itemText {
+    font-size: 12px;
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .c_recommend {
+    padding-top: 80px;
+  }
+}
+
+.c_cart {
+  padding-top: 25px;
+}
+.c_cart__inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.c_cart__item {
+  background: #fff;
+}
+.c_cart__item + .c_cart__item {
+  margin-top: 6px;
+}
+.c_cart__itemLink {
+  display: flex;
+  padding: 20px;
+  text-decoration: none;
+}
+.c_cart__itemThumb {
+  width: 90px;
+  height: 90px;
+}
+.c_cart__itemThumb img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: auto;
+  min-width: inherit;
+  height: 100%;
+}
+.c_cart__itemBody {
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 20px;
+}
+.c_cart__itemTitle {
+  margin-top: -4px;
+}
+.c_cart__itemPrice {
+  font-size: 18px;
+  font-size: 1.125rem;
+  font-weight: bold;
+  text-align: end;
+}
+.c_cart__price {
+  margin: 20px 20px 0;
+}
+@media (min-width: 1000px) {
+  .c_cart__price {
+    margin: 30px 0;
+  }
+}
+.c_cart__priceItem {
+  font-weight: bold;
+  line-height: 1;
+  text-align: end;
+  font-size: 30px;
+  font-size: 1.875rem;
+}
+.c_cart__priceItem + .c_cart__priceItem {
+  margin-top: 16px;
+}
+@media (min-width: 1000px) {
+  .c_cart__priceItem + .c_cart__priceItem {
+    margin-top: 20px;
+  }
+}
+.c_cart__priceText {
+  font-size: 16px;
+  font-size: 1rem;
+  margin-right: 10px;
+  font-weight: normal;
+}
+
+.c_memberLogin {
+  padding-top: 40px;
+}
+@media (min-width: 1000px) {
+  .c_memberLogin {
+    padding-top: 80px;
+  }
+}
+
+.c_form {
+  margin: 12px 15px 0;
+}
+@media (min-width: 1000px) {
+  .c_form {
+    width: 400px;
+    margin: 60px auto 0;
+  }
+}
+.c_form__group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.c_form__group + .c_form__group {
+  margin-top: 34px;
+}
+.c_form__label {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+.c_form__input {
+  padding: 12px 5px;
+  background-color: #fff;
+  border: 1px solid #000;
+}
+.c_form__input::-moz-placeholder {
+  color: #666;
+}
+.c_form__input::placeholder {
+  color: #666;
+}
+.c_form .e_btnGroup {
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+.c_form .e_btnGroup__note {
+  margin-top: 20px;
+  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 .e_card {
@@ -834,4 +1042,12 @@ input.e_btn._white-ol {
   color: #fff;
   background-color: transparent;
   border: 2px solid #fff;
+}
+
+.e_btnGroup {
+  display: flex;
+}
+.e_btnGroup__note {
+  font-size: 12px;
+  font-size: 0.75rem;
 }/*# sourceMappingURL=style.css.map */

@@ -122,8 +122,15 @@ input {
             background-color: transparent;
             border: 2px solid #fff;
         }
-
     }
 }
 
 // 囲み　右寄せ　中央寄せ
+
+.e_btnGroup {
+    display: flex;
+
+    &__note {
+        @include fz(12);
+    }
+}

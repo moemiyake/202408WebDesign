@@ -96,8 +96,126 @@
 
 
         <main class="l_main">
+            <!-- カート -->
+            <section class="c_section c_cart">
 
-         
+                <div class="c_section__header">
+                    <!-- タイトル -->
+                    <h2 class="c_section__headerTitle">
+                        Cart
+                    </h2>
+                </div>
+
+                <div class="c_cart__inner">
+                    <!-- アイテムリスト -->
+                    <div class="c_cart__list">
+                        <!-- アイテム１ -->
+                        <div class="c_cart__item">
+                            <a href="detail.html" class="c_cart__itemLink">
+                                <picture class="c_cart__itemThumb">
+                                    <source srcset="assets/img/card/flower02.webp" type="">
+                                    <img src="assets/img/card/flower02.jpg" alt="サムネイル画像：パープル系ドライフラワー">
+                                </picture>
+                                <div class="c_cart__itemBody">
+                                    <h3 class="c_cart__itemTitle">パープル系ドライフラワー</h3>
+                                    <p class="c_cart__itemPrice">¥3,800</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- アイテム２ -->
+                        <div class="c_cart__item">
+                            <a href="" class="c_cart__itemLink">
+                                <picture class="c_cart__itemThumb">
+                                    <source srcset="" assets/img/card/flower05.webp>
+                                    <img src="assets/img/card/flower05.jpg" alt="画像：スタッフ おまかせアレンジ">
+                                </picture>
+                                <div class="c_cart__itemBody">
+                                    <h3 class="c_cart__itemTitle">スタッフ おまかせアレンジ</h3>
+                                    <p class="c_cart__itemPrice">¥3,800</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- アイテム３ -->
+                        <div class="c_cart__item">
+                            <a href="" class="c_cart__itemLink">
+                                <picture class="c_cart__itemThumb">
+                                    <source srcset="assets/img/card/flower01.webp">
+                                    <img src="assets/img/card/flower01.jpg" alt="サムネイル画像：ひまわりのアレンジ花束">
+                                </picture>
+                                <div class="c_cart__itemBody">
+                                    <h3 class="c_cart__itemTitle">ひまわりのアレンジ花束</h3>
+                                    <p class="c_cart__itemPrice">¥3,800</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 価格 -->
+                    <ul class="c_cart__price">
+                        <li class="c_cart__priceItem"><span class="c_cart__priceText">送料</span>¥500</li>
+                        <li class="c_cart__priceItem"><span class="c_cart__priceText">合計</span>¥11,900</li>
+                    </ul>
+                </div>
+
+            </section>
+
+            <!-- フォーム -->
+            <section class="c_section c_memberLogin">
+
+                <div class="c_section__header">
+                    <!-- タイトル -->
+                    <h2 class="c_section__headerTitle">
+                        Member Login
+                    </h2>
+                </div>
+
+                <!-- 入力部分 -->
+                <form action="" class="c_form">
+
+                    <!-- グループ１ -->
+                    <div class="c_form__group">
+                        <label for="member_id" class="c_form__label">
+                            <!-- for属性　"member_id" -->
+                            会員ID/メールアドレス
+                        </label>
+                        <input type="text" class="c_form__input" id="member_id" name="member_id" 
+                        placeholder="テキストが入ります。" 
+                        autocapitalize="off" 
+                        autocorrect="off" 
+                        spellcheck="false" 
+                        required>
+                        <!-- required 必須入力 -->
+                    </div>
+
+                    <!-- グループ２ -->
+                    <div class="c_form__group">
+                        <!-- for属性　"member_password" -->
+                        <label for="member_password" class="c_form__label">
+                            パスワード
+                        </label>
+                        <input type="password" id="member_password" required class="c_form__input">
+                    </div>
+
+                    <!-- ボタン -->
+                    <div class="e_btnGroup">
+                        <button class="e_btn _brown">
+                            ログインして購入する
+                        </button>
+                        <p class="e_btnGroup__note">
+                            <a href="#">新規会員登録して購入する</a>
+                        </p>
+                    </div>
+                </form>
+            </section>
+
+
+
+
+
+
+
         </main>
 
         <div class="l_breadcrumb">
