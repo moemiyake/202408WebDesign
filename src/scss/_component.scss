@@ -103,7 +103,6 @@
     }
 }
 
-//★繋がってない？
 // 商品詳細
 .c_detail {
     @include touch {
@@ -228,7 +227,7 @@
 
     // ボタン
     &__btn {
-        margin-top: 224px;
+        margin-top: 24px;
         max-width: 314px;
 
         @include desktop {
@@ -247,7 +246,7 @@
 
     &__inner {
         @include desktop {
-            min-width: 1000px;
+            max-width: 1000px;
             padding-top: 45px;
             padding-bottom: 50px;
             margin: 0 auto;
@@ -310,6 +309,9 @@
             }
         }
     }
+
+    //__item
+
 }
 
 //おすすめ
