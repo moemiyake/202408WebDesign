@@ -13,15 +13,51 @@
 
     &__inner {
         width: 100%;
+        height: 100%;
 
         @include desktop {
-            min-width: 1024px;
+            max-width: 1024px;
             height: 360px;
             margin: 0 auto;
         }
     }
 
     //スライダーの設定　ここから
+    .swiper {
+        width: 100%;
+        height: 100%;
+    }
+
+    .swiper-slide {
+        picture {
+            display: block;
+            //グローバルナビゲーションを開いたときに、windowにリサイズイベントが発生するため、Swiperが正常に要素の幅を計算できるように必ずblockにする。pictureのデフォルトのdisplayの値inlineのままではSwiperは幅を計算できなくなり、表示が破綻する。
+
+            width: 100%;
+            height: 100%;
+
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    .swiper-pagination {
+        bottom: 18px;
+    }
+
+    .swiper-pagination-bullet {
+        width: 12px;
+        height: 12px;
+        --swiper-pagination-bullet-inactive-color: #fff;
+        --swiper-pagination-bullet-inactive-opacity: 1;
+    }
+
+    .swiper-pagination-bullet-active {
+        --swiper-pagination-color: #{$color_secondary};
+    }
 
 
     //スライダーの設定　ここまで
@@ -130,6 +166,39 @@
     }
 
     // スライダー
+    &__slide {
+        .swiper-slide {
+            @include desktop {
+                height: 600px;
+            }
+
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 50px;
+            height: 50px;
+            @include ov;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 50px;
+                height: 50px;
+                background-image: url(../img/common/arrow.png);
+                background-size: 100% auto;
+            }
+        }
+
+        .swiper-button-prev {
+            rotate: 180deg; //新しいプロパティ　※旧...transform:rotate(180deg);
+        }
+    }
 
 
     // サムネイル
@@ -138,8 +207,42 @@
 
         @include desktop {
             display: block;
+            margin-top: 20px;
+        }
+
+        //Swiperの設定
+        .swiper-slide {
+            width: 100px;
+            margin-left: 10px;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            // img {
+            //     width: 100px;
+            //     height: auto;
+            // }
+
+            &.swiper-slide-thumb-active {
+                &::before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    inset: 0; //top, right, bottom, left...: 0;
+                    border: 2px solid $color_primary;
+                    pointer-events: none;
+                    position: absolute;
+                    z-index: 5;
+                }
+            }
         }
     }
+
 
     // コンテンツ
     &__contents {
@@ -308,9 +411,7 @@
                 @include fz(12);
             }
         }
-    }
-
-    //__item
+    } //__item ここまで
 
 }
 
@@ -412,6 +513,7 @@
 // メンバーログイン
 .c_memberLogin {
     padding-top: 40px;
+
     @include desktop {
         padding-top: 80px;
     }
@@ -419,6 +521,7 @@
 
 .c_form {
     margin: 12px 15px 0;
+
     @include desktop {
         width: 400px;
         margin: 60px auto 0;
@@ -428,8 +531,9 @@
         display: flex;
         flex-direction: column;
         margin-top: 10px;
+
         //兄弟要素
-        & + & {
+        &+& {
             margin-top: 34px;
         }
     }
@@ -461,4 +565,3 @@
         }
     }
 }
-

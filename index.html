@@ -87,14 +87,33 @@
         <!-- キービジュアル -->
         <div class="c_kv">
             <div class="c_kv__inner">
-                <picture>
-                    <source srcset="./assets/img/kv/main01_sp.webp 1x, ./assets/img/kv/main01_sp@2x.jpg 2x"
-                        media="(max-width: 999px)">
-                    <source srcset="./assets/img/kv/main01.webp 1x, ./assets/img/kv/main01@2x.jpg 2x"
-                        media="(min-width:1000px)">
-                    <!-- フォールバック：source属性で表示できなかった時の、保険用画像 -->
-                    <img src=".//assets/img/kv/main01.jpg" alt="About Flower">
-                </picture>
+
+                <!-- スライダー　ここから -->
+                <div class="swiper" id="kv">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <picture>
+                                <source srcset="./assets/img/kv/main01_sp.webp 1x, ./assets/img/kv/main01_sp@2x.jpg 2x"
+                                    media="(max-width: 999px)">
+                                <source srcset="./assets/img/kv/main01.webp 1x, ./assets/img/kv/main01@2x.jpg 2x"
+                                    media="(min-width:1000px)">
+                                <!-- フォールバック：source属性で表示できなかった時の、保険用画像 -->
+                                <img src=".//assets/img/kv/main01.jpg" alt="About Flower">
+                            </picture>
+                        </div>
+                        <div class="swiper-slide">
+                            <picture>
+                                <source srcset="./assets/img/kv/main02_sp.webp 1x, ./assets/img/kv/main02_sp@2x.jpg 2x"
+                                    media="(max-width: 999px)">
+                                <source srcset="./assets/img/kv/main02.webp 1x, ./assets/img/kv/main02@2x.jpg 2x"
+                                    media="(min-width:1000px)">
+                                <!-- フォールバック：source属性で表示できなかった時の、保険用画像 -->
+                                <img src=".//assets/img/kv/main01.jpg" alt="About Flower">
+                            </picture>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
                 <!-- <div class="swiper-container" id="kv"></div> -->
             </div>
         </div>

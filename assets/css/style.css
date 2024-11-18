@@ -491,13 +491,41 @@ body.is-openMenu .l_gnav {
 }
 .c_kv__inner {
   width: 100%;
+  height: 100%;
 }
 @media (min-width: 1000px) {
   .c_kv__inner {
-    min-width: 1024px;
+    max-width: 1024px;
     height: 360px;
     margin: 0 auto;
   }
+}
+.c_kv .swiper {
+  width: 100%;
+  height: 100%;
+}
+.c_kv .swiper-slide picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.c_kv .swiper-slide picture img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.c_kv .swiper-pagination {
+  bottom: 18px;
+}
+.c_kv .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  --swiper-pagination-bullet-inactive-color: #fff;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+}
+.c_kv .swiper-pagination-bullet-active {
+  --swiper-pagination-color: #9b875a;
 }
 
 .c_section__header {
@@ -595,13 +623,72 @@ body.is-openMenu .l_gnav {
     margin-top: -20px;
   }
 }
+@media (min-width: 1000px) {
+  .c_detail__slide .swiper-slide {
+    height: 600px;
+  }
+}
+.c_detail__slide .swiper-slide img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.c_detail__slide .swiper-button-next,
+.c_detail__slide .swiper-button-prev {
+  width: 50px;
+  height: 50px;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+.c_detail__slide .swiper-button-next:hover,
+.c_detail__slide .swiper-button-prev:hover {
+  opacity: 0.7;
+}
+.c_detail__slide .swiper-button-next:hover img,
+.c_detail__slide .swiper-button-prev:hover img {
+  background-color: rgba(255, 255, 255, 0.01);
+}
+.c_detail__slide .swiper-button-next::after,
+.c_detail__slide .swiper-button-prev::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-image: url(../img/common/arrow.png);
+  background-size: 100% auto;
+}
+.c_detail__slide .swiper-button-prev {
+  rotate: 180deg;
+}
 .c_detail__thumbs {
   display: none;
 }
 @media (min-width: 1000px) {
   .c_detail__thumbs {
     display: block;
+    margin-top: 20px;
   }
+}
+.c_detail__thumbs .swiper-slide {
+  width: 100px;
+  margin-left: 10px;
+}
+.c_detail__thumbs .swiper-slide:first-child {
+  margin-left: 0;
+}
+.c_detail__thumbs .swiper-slide:hover {
+  cursor: pointer;
+}
+.c_detail__thumbs .swiper-slide.swiper-slide-thumb-active::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  border: 2px solid #3e2b00;
+  pointer-events: none;
+  position: absolute;
+  z-index: 5;
 }
 .c_detail__contents {
   display: flex;
